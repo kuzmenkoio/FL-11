@@ -1,0 +1,99 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #162b4d;
+  --link: #fff;
+  --link--hover: #b8b8b8;
+  --bg-footer-color: #162b4d;;
+}
+
+body {
+  font-family: roboto;
+  background-color: #0b192f;
+}
+.post-1 {
+	background: #B71757;
+}
+.post-2 {
+	background: #0D7E71;
+}
+.post-3 {
+	background: #b1660e;
+}
+.post-4 {
+	background: #d12767;
+}
+.post-5 {
+	background: #2d95bb;
+}
+
+.travel {
+  color: #dafff4;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    max-width: 1400px;
+    min-width: 768px;
+    margin: 0 auto;
+  }
+  
+  .blog {
+    color: #c52954;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #162b4d;
+  }
+
+  h1 {
+    margin-right: auto;
+    margin-left: 25px;
+    font-weight: 300;
+  }
+
+  a {
+    color: white;
+    margin: 50px 25px 50px 25px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: rgba(22,43,77, 0.2);
+  }
+
+  header a:nth-child(5) {
+    margin-right: 90px;
+  }
+
+  h2, p {
+    color: white;
+  }
+
+  img, .text {
+    width: 520px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .grid {
+    max-width: 1040px;
+    margin-top: 10px; 
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .grid section:nth-of-type(1) {
+    order: 2;
+  }
+}
