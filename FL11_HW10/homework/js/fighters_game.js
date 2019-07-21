@@ -12,7 +12,7 @@ class Fighter {
         this.getAgility = () => agility;
         this.getHealth = () => health;
         this.logCombatHistory = () =>
-            console.log('Name: ' + this.getName() + ', Wins: ' + wins + ', Losses: ' + losses);
+            console.log(`Name: ${this.getName()}, Wins: ${wins}, Losses: ${losses}`);
         this.heal = (value) => {
             health += value;
             if (health > totalHp) {
@@ -33,9 +33,9 @@ class Fighter {
         let attackValue = Math.floor(Math.random() * MULTI + 1);
         if (attackValue > defender.getAgility()) {
             defender.dealDamage(this.getDamage());
-            console.log(this.getName() + ' make ' + this.getDamage() + ' damage to ' + defender.getName());
+            console.log(`${this.getName()} make ${this.getDamage()} damage to ${defender.getName()}`);
         } else {
-            console.log(this.getName() + ' attack missed');
+            console.log(`${this.getName()} attack missed`);
         }
     }
 }
@@ -50,14 +50,14 @@ function battle(fighter1, fighter2) {
             if (fighter2.getHealth() === 0) {
                 fighter2.addLoss();
                 fighter1.addWin();
-                console.log(fighter1.getName() + ' has won ');
+                console.log(`${fighter1.getName()} has won`);
                 break;
             }
             fighter2.attack(fighter1);
             if (fighter1.getHealth() === 0) {
                 fighter1.addLoss();
                 fighter2.addWin();
-                console.log(fighter2.getName() + ' has won ');
+                console.log(`${fighter2.getName()} has won`);
                 break;
             }
         }
