@@ -1,0 +1,64 @@
+@import 'variables';
+
+.added_styles {
+    color: white;
+    display: block;
+    height: 2em;
+    font-weight: 600;
+}
+
+.related-red {
+    border: 1px solid @red-color;
+}
+
+.related-blue {
+    border: 1px solid @blue-color;
+}
+
+.related-orange {
+    border: 1px solid @orange-color;
+}
+
+.related-green {
+    border: 1px solid @green-color;
+}
+
+div {
+    &.related_red {
+        &::after {
+            content: "Cardio kickboxing";
+            background-color: @red-color;
+            .added_styles();
+        }
+    }
+}
+
+div {
+    &.related_blue {
+        &::after {
+            content: "Fitness xpress";
+            background-color: @blue-color;
+            .added_styles();
+        }
+    }
+}
+
+div {
+    &.related_orange {
+        &::after {
+            content: "Zumba";
+            background-color: @orange-color;
+            .added_styles();
+        }
+    }
+}
+
+div {
+    &.related_green {
+        &::after {
+            content: "Bootcamp";
+            background-color: @green-color;
+            .added_styles();
+        }
+    }
+}
