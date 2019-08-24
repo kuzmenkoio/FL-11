@@ -1,4 +1,4 @@
-const array = [1,2,3,4,56,789,8,76,5,241,5,356,567,2];
+const array = [1,2,3,4,56,7,8,76,5,241,5,356,567,2];
 
 const maxElement = (arr) => {
     return Math.max(...arr)
@@ -8,14 +8,14 @@ console.log(maxElement(array));
 
 // ---------------------------------
 
-const array2 = [5,5,3];
+const array2 = [1,2,3];
 
 const copyArray = (arr) => {
     return [...arr];
 }
 
 const copiedArr = copyArray(array2);
-console.log(copiedArr);
+console.log(array2, copiedArr);
 
 console.log(copiedArr === array2);
 
@@ -27,20 +27,16 @@ const addUniqueId = (obj) => {
     return newObj;
 }
 
-const obj = {name: 123};
-const obj1 = addUniqueId(obj);
-
-console.log(obj === obj1);
+console.log(addUniqueId({name: 123}));
 
 // -----------------------------------------
 
 const oldObj = {name: 'Someone', details: {id: 1, age: 11, university: 'UNI'}};
 
 const regroupObject = (obj) => {
+    
     let {id, age, university} = obj.details;
-    const {firstName} = obj.name;
-    const newObj = {university, user: {age, firstName, id}};
-    return newObj;
+    return {university, user: {age, firstName: obj.name, id}};
 }
 
 const regroupedObj = regroupObject(oldObj);
@@ -76,7 +72,8 @@ const add = (a, b = required()) => {
     return a + b;
 }
 
-console.log(add(1, 364));
+console.log(add(1, 3));
+// console.log(add(1));
 
 // --------------------------------------------------------
 
@@ -85,9 +82,10 @@ const URL = 'https://jsonplaceholder.typicode.com/users'
 function getReps() {
     fetch(URL)
         .then(response => response.json())
-        .then(data => data.map((item) => {
-            console.log(item.name);
-        }))
+        .then(data => data.map((item) => item.name))
+        .then(names => {
+            console.log(Array.from(names).sort())
+        })
 }
 
 getReps();
@@ -97,9 +95,9 @@ getReps();
 async function getReps1() {
     let response = await fetch(URL);
     let repsList = await response.json();
-    let usersLog = await repsList.map((item) => {
-        console.log(item.name);
-    });
+    let users = await repsList.map((item) => item.name);
+    
+    let usersABC = console.log(Array.from(users).sort());
 }
 
 getReps1();
