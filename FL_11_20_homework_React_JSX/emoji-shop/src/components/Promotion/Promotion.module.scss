@@ -1,0 +1,12 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 50%;
+    margin: 0 auto;
+    width: auto;
+}
+
+div.list {
+    width: 100px;
+}
